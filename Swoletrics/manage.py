@@ -10,9 +10,7 @@ from flask_migrate import Migrate, MigrateCommand
 app = create_app(os.getenv("SWOLETRICS_ENV") or "DEV")
 manager = Manager(app)
 
-
 migrate = Migrate(app, db)
-
 manager.add_command("db", MigrateCommand)
 
 

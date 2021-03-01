@@ -1,25 +1,22 @@
-from datetime import datetime
-
 from sqlalchemy import desc
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from swoletrics import db
 
-#tags = db.Table('bookmark_tag',
-#    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
-#    db.Column('bookmark_id', db.Integer, db.ForeignKey('bookmark.id'))
-#)
-
-
 
 
 class User(db.Model, UserMixin):
+    __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(120), unique=True)
     #routine = db.relationship('Routine', backref='user', lazy='dynamic')
     password_hash = db.Column(db.String)
+
+    def __init__(self, username=None, email=None):
+        self.username = username
+        self.email = email
 
     @property
     def password(self):
@@ -37,6 +34,6 @@ class User(db.Model, UserMixin):
         return User.query.filter_by(username=username).first()
 
     def __repr__(self):
-        return "<User '{}'>".format(self.username)
+        return f"<User '{self.username}'>"
 
 
