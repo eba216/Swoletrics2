@@ -15,8 +15,8 @@ def login():
         if user is not None and user.check_password(form.password.data):
             login_user(user, form.remember_me.data)
             flash(f"Logged in successfully as {user.username}.")
-            return redirect(request.args.get('next') or url_for('routines.user',
-                                                username=user.username))
+            print(user.username)
+            return redirect(url_for("main.routines", name = user.username))
         flash('Incorrect username or password.')
     return render_template("login.html", form=form)
 
@@ -35,8 +35,11 @@ def signup():
         user = User(email=form.email.data,
                     username=form.username.data,
                     password=form.password.data)
+
         db.session.add(user)
         db.session.commit()
         flash(f"Welcome, {user.username}! Please login.")
+        print("Validated")
         return redirect(url_for('auth.login'))
+    print(form.errors)
     return render_template("signup.html", form=form)

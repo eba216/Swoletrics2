@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
 
 {% block title %}
 Signup
@@ -30,23 +31,15 @@ Signup
 
     <div class="pure-g">
         <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-            <form action="" class="pure-form pure-form-stacked" method="post">
-                {{form.hidden_tag()}}
+            <form action ="" class="pure-form pure-form-stacked" method="post">
+                {{ form.hidden_tag() }}
                 <fieldset>
-
-                    <label> Your Name {{form.username}} </label>
-<!--                    <input id="name" type="text" placeholder="Your Name">-->
-
-                    <label>Your Email {{form.email}} </label>
-<!--                    <input id="email" type="email" placeholder="Your Email"> {{form.password}}-->
-
-                    <label> Your Password {{form.password}}</label>
-<!--                    <input id="password" type="password" placeholder="Your Password">-->
-
-                    <label>Re-enter Password {{form.password2}}</label>
-<!--                    <input id="password2" type="password" placeholder="Your Password">-->
-
-                    <button type="submit" class="pure-button"> Sign Up </button>
+                    {{ render_field(form.username) }}
+                    {{ render_field(form.email) }}
+                    {{ render_field(form.password) }}
+                    {{ render_field(form.password2) }}
+                    <br/>
+                    {{ form.submit }}
 
 
                 </fieldset>

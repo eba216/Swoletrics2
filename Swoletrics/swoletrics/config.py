@@ -2,8 +2,9 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config:
-    SECRET_KEY = os.urandom(24)
+    SECRET_KEY = os.urandom(24).hex()
     DEBUG = False
 
 
@@ -25,7 +26,7 @@ class ProductionConfig(Config):
 
 
 config_by_name = dict(
-    DEV = DevelopmentConfig,
-    TEST = TestingConfig,
-    PROD = ProductionConfig
+    DEV=DevelopmentConfig,
+    TEST=TestingConfig,
+    PROD=ProductionConfig
 )

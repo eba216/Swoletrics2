@@ -8,7 +8,6 @@ from .config import config_by_name
 db = SQLAlchemy()
 
 
-
 # Configure authentication
 login_manager = LoginManager()
 login_manager.session_protection = "strong"

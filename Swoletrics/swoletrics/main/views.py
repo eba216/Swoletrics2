@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, url_for
 
 from . import main
 from .. import login_manager
@@ -14,6 +14,9 @@ def load_user(userid):
 def index():
     return render_template('index.html')
 
+@main.route('/routines/<name>', methods = ["GET", "POST"])
+def routines(name):
+    return render_template("routines.html", name=name)
 
 # @main.app_errorhandler(403)
 # def forbidden(e):
