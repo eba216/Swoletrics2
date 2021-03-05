@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_required
 
 from . import auth
 from .. import db
@@ -7,6 +7,8 @@ from ..models import User
 from .forms import LoginForm, SignupForm
 
 
+
+@login_required
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
@@ -14,9 +16,7 @@ def login():
         user = User.get_by_username(form.username.data)
         if user is not None and user.check_password(form.password.data):
             login_user(user, form.remember_me.data)
-            flash(f"Logged in successfully as {user.username}.")
-            print(user.username)
-            return redirect(url_for("main.routines", name = user.username))
+            return redirect(url_for("main.user", username = user.username))
         flash('Incorrect username or password.')
     return render_template("login.html", form=form)
 
@@ -30,7 +30,6 @@ def logout():
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
     form = SignupForm()
-
     if form.validate_on_submit():
         user = User(email=form.email.data,
                     username=form.username.data,
@@ -39,7 +38,5 @@ def signup():
         db.session.add(user)
         db.session.commit()
         flash(f"Welcome, {user.username}! Please login.")
-        print("Validated")
         return redirect(url_for('auth.login'))
-    print(form.errors)
     return render_template("signup.html", form=form)

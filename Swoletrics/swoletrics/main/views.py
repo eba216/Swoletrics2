@@ -1,4 +1,5 @@
 from flask import render_template, url_for
+from flask_login import login_required
 
 from . import main
 from .. import login_manager
@@ -14,9 +15,11 @@ def load_user(userid):
 def index():
     return render_template('index.html')
 
-@main.route('/routines/<name>', methods = ["GET", "POST"])
-def routines(name):
-    return render_template("routines.html", name=name)
+@login_required
+@main.route('/user/<username>', methods = ["GET", "POST"])
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user.html', user = user)
 
 # @main.app_errorhandler(403)
 # def forbidden(e):

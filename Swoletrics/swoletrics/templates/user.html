@@ -2,13 +2,19 @@
 
 
 {% block title %}
-{{name}}'s page
+{{user.username}}'s page
 {%  endblock %}
 
-{% block splash %}
 
-{% endblock%}
 
 {% block content %}
-Welcome {{name}}
+<article>
+    <h1> Welcome {{user.username}} </h1>
+</article>
+
+
+
+
+
+
 {% endblock %}

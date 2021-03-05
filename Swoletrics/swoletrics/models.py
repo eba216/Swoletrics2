@@ -5,7 +5,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from swoletrics import db
 
 
-
 class User(db.Model, UserMixin):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
@@ -13,10 +12,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True)
     #routine = db.relationship('Routine', backref='user', lazy='dynamic')
     password_hash = db.Column(db.String)
-
-    def __init__(self, username=None, email=None):
-        self.username = username
-        self.email = email
 
     @property
     def password(self):
