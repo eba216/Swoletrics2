@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html > <!-- class="no-js" -->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
@@ -27,15 +27,16 @@
 
                     <a class="pure-menu-heading" href="{{ url_for('main.index') }}">Swoletrics</a>
 
+
                     <ul class="pure-menu-list">
 
                         {% if current_user.is_authenticated %}
 
-                            <li class="pure-menu-item "><a href="" class="pure-menu-link"> My Routine </a></li>
+                            <li class="pure-menu-item "><a href="" class="pure-menu-link"> My Routines </a></li>
                             <li class="pure-menu-item "><a href="" class="pure-menu-link"> My Progression </a></li>
                             <li class="pure-menu-item ">
                                 <a href="{{url_for('main.user',username=current_user.username)}}"class="pure-menu-link">
-                                    My Home</a></li>
+                                    {{current_user.username}}'s Home</a></li>
                             <li class="pure-menu-item ">
                                 <a href="{{ url_for('auth.logout') }}" class="pure-menu-link">Sign out</a></li>
                         {% else %}
@@ -72,19 +73,21 @@
 
                     {%  block content %}
 
+
                     {%  endblock %}
 
                 </div> <!-- #main -->
             </div> <!-- #main-container -->
         </div>
 
-
+{% block footer %}
         <div class="footer l-box is-center">
-             <footer class="wrapper">
-                    <p>Swoletrics WIP by Edwin Baeza<p>
-                  </footer >
+<!--             <footer class="wrapper">-->
+            Swoletrics WIP by Edwin Baeza
+<!--                  </footer >-->
         </div>
 
+{% endblock %}
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery ||

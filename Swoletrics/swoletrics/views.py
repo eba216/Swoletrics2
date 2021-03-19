@@ -13,16 +13,11 @@ from models import User
 def load_user(userid):
     return User.query.get(int(userid))
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template("index.html")
+# @app.route('/')
+# @app.route('/index')
+# def index():
+#     return render_template("index.html")
 
-# @login_required
-# @app.route('/user/<username>')
-# def user(username):
-#     user = User.query.filter_by(username=username).first_or_404()
-#     return render_template('user.html', user=user)
 
 # @app.errorhandler(403)
 # def forbidden(e):

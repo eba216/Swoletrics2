@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
 
 {% block title %}
 Swoletrics -- Welcome
@@ -13,17 +14,122 @@ Swoletrics -- Welcome
                     <h1 class="splash-head">Embark on your fitness journey</h1>
                     <p class="splash-subhead">Designed with progression in mind
                     </p>
-                    <p><a href="{{url_for('auth.signup')}}" class="pure-button pure-button-primary">Get Started</a></p>
+                    <p><a href="https://muscleandstrengthpyramids.com/" class="pure-button pure-button-primary">Learn More</a>
+                    <a href="{{url_for('auth.signup')}}" class="pure-button pure-button-primary">Get Started</a></p>
+                    </p>
+
                 </div>
             </div>
         <section>
 
+
+
+</article>
+
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">The Swoletrics approach</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    Learn how to progress
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    A program tailored for you
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    Visualize your progress
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    Gains
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+<!--        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        </div>-->
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+        <div class="pure-g">
+        <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+            <form class="pure-form pure-form-stacked" method="post">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    {{ render_field(form.username) }}
+                    {{ render_field(form.email) }}
+                    {{ render_field(form.password) }}
+                    {{ render_field(form.password2) }}
+                    <br/>
+                    <button type="submit" class="pure-button"> Sign up </button>
+
+
+                </fieldset>
+            </form>
+        </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    Edwin Baeza
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    The Pyramids
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+{%block footer %}
     <div class="footer l-box is-center">
         <footer class="wrapper">
             <p>Swoletrics WIP by Edwin Baeza<p>
         </footer >
     </div>
+{% endblock%}
 
-</article>
+</div>
+
+
 {% endblock %}
 

@@ -1,19 +1,31 @@
-from flask import render_template, url_for
+from flask import render_template, redirect, url_for, flash
 from flask_login import login_required
 
 from . import main
 from .. import login_manager
 from ..models import User
+from ..auth.forms import SignupForm
+from .. import db
 
 
 @login_manager.user_loader
 def load_user(userid):
     return User.query.get(int(userid))
 
-
-@main.route('/')
+@main.route('/index', methods = ["GET", "POST"])
+@main.route('/', methods = ["GET", "POST"])
 def index():
-    return render_template('index.html')
+    form = SignupForm()
+    if form.validate_on_submit():
+        user = User(email=form.email.data,
+                    username=form.username.data,
+                    password=form.password.data)
+
+        db.session.add(user)
+        db.session.commit()
+        flash(f"Welcome, {user.username}! Please login.")
+        return redirect(url_for('auth.login'))
+    return render_template("index.html", form=form)
 
 @login_required
 @main.route('/user/<username>', methods = ["GET", "POST"])
