@@ -151,7 +151,6 @@ img {
 
 /* Forms
    ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -271,7 +270,10 @@ textarea {
 [type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
+
 }
+
+
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.

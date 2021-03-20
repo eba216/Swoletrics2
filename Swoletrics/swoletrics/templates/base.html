@@ -6,15 +6,16 @@
         <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+<!--        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">-->
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
               integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd"
               crossorigin="anonymous">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="/static/css/styles.css">
         <script src="../static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css" />
     </head>
     <body>
 
@@ -59,7 +60,7 @@
                         {% if messages %}
                             <ul class="pure-menu-list">
                                 {% for message in messages %}
-                                <li >{{ message }}</li>
+                                <li>{{ message }}</li>
                                 {% endfor %}
                             </ul>
                         {% endif %}

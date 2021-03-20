@@ -8,25 +8,30 @@ Login
 
 {% block content %}
 
-<br/><br/><br/>
+<br/><br/>
 
     <h2 class="content-head is-center">Login</h2>
     <div class="pure-g">
-        <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+        <div class="l-box-lrg pure-u-1 pure-u-md-2-5 ">
             <form class="pure-form pure-form-aligned" method="post">
                 {{ form.hidden_tag() }}
-                <fieldset>
+                <fieldset class="pure-group">
 
                     {{ render_field(form.username) }}
                     {{ render_field(form.password) }}
 
-                     <label class="pure-checkbox"> <input type="checkbox" /> Remember Me </label>
-
-                    <button type="submit" class="pure-button">  Sign in </button>
+                   <label class = "pure-checkbox">   <div style="float: left; display: inline; vertical-align: middle;">Remember Me
+                        <input style="float: left; display: inline; " type="checkbox"/> </div>
+                   </label>
+                    <br/><br/>
+                    <div style="clear: both"/>
+                    <button type="submit" class="pure-button"> Sign in</button>
 
                 </fieldset>
             </form>
         </div>
+
+
 
         <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
             <h4>Contact Us</h4>
@@ -42,4 +47,6 @@ Login
     </div>
 
 </br>
+
+
 {% endblock%}
