@@ -1,3 +1,3 @@
 # Swoletrics #
 
-Swoletric is a fitness platform built around the idea of progression.   
+Swoletrics is a fitness platform built around the idea of progression.   
