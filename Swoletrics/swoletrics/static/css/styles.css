@@ -101,7 +101,6 @@ a.pure-button-primary {
     color: #1f8dd6;
     border-radius: 5px;
     font-size: 120%;
-    opacity: 0.9;
 }
 
 
@@ -190,7 +189,6 @@ a.pure-button-primary {
 .splash-subhead {
     color: white;
     letter-spacing: 0.05em;
-    opacity: 0.8;
 }
 
 
@@ -317,16 +315,16 @@ a.pure-button-primary {
     margin: 0.2em 0 0;
     font-weight: 100;
 }
-    .pricing-table-price span {
-        display: block;
-        text-transform: uppercase;
-        font-size: 0.2em;
-        padding-bottom: 2em;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.5);
-        *color: #fff;
-    }
 
+.pricing-table-price span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.2em;
+    padding-bottom: 2em;
+    font-weight: 400;
+    /*color: rgba(255, 0, 0, 0.8);*/
+    color: white;/*#fff;*/
+}
 
 
 
@@ -341,10 +339,10 @@ a.pure-button-primary {
  */
 
 .banner {
-    background: transparent url('../img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg') 0 0 no-repeat fixed;
+    background: transparent url('../img/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg') 0 0 no-repeat fixed;
     text-align: center;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=url('../img/sven-mieke-jO6vBWX9h9Y-unsplash.jpg'), sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=url('../img/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg'), sizingMethod='scale');
 
     height: 200px;
     width: 100%;

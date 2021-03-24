@@ -30,4 +30,7 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
+    from .routines import routines as routines_blueprint
+    app.register_blueprint(routines_blueprint, url_prefix='/routines')
+
     return app

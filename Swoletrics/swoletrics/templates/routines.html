@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+{{user.username}}'s Routines
+{%  endblock %}
+
+
+{% block content %}
+<h1>Routines</h1>
+
+<h2 class="content-head is-center">
+    A Beginner Bodybuilding Template
+</h2>
+
+<div class="content">
+    <div class="pure-g">
+
+        <div class="pure-u-1-1">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <legend><h2> Day 1 - Lower</h2></legend>
+
+                    <!-- First Row  -->
+                    <div class="pure-u-1-4">
+                        <h4> Exercise</h4>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h4> Sets</h4>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <h4> Reps</h4>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h4> %1RM </h4>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h4> 1st Set RPE </h4>
+                    </div>
+
+
+                    <!-- Second Row  -->
+                    <div class="pure-u-1-4">
+                        <select name = "Leg Exercises">
+                            <optgroup label="Squat Variant" >
+                                <option>Low-Bar Back Squat</option>
+                                <option>High-Bar Back Squat</option>
+                                <option>Front Squat</option>
+                                <option>Hack Squat</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 3 </h5>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <h5> 5 </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 82.5% </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> NA</h5>
+                    </div>
+
+
+                    <!-- Third Row  -->
+                    <div class="pure-u-1-4">
+                        <select name = "Leg Exercises">
+                            <optgroup label = "Deadlift Variant">
+                                <option> Conventional Deadlift </option>
+                                <option> Sumo Deadlift </option>
+                                <option> Romanian DeadliftL</option>
+                                <option> Stiff-leg Deadlift</option>
+                                <option> Good Morning </option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 3 </h5>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <h5> 5 </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 82.5% </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> NA</h5>
+                    </div>
+
+
+                    <!-- Fourth Row  -->
+                    <div class="pure-u-1-4">
+                        <select name = "Leg Exercises">
+                            <optgroup label="Single Leg Squat Variant ">
+                                <option> Bulgarian Split Squat </option>
+                                <option> Lunge </option>
+                                <option> Step-Ups </option>
+                                <option> Single-leg Squat </option>
+
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 3 </h5>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <h5> 8 </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> NA </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 8 </h5>
+                    </div>
+
+
+                    <!-- Fifth Row  -->
+                    <div class="pure-u-1-4">
+                        <select name = "Leg Exercises">
+                            <optgroup label="Standing Calf">
+                                <option>Deadlift (DL)</option>
+                                <option>Romanian DL</option>
+                                <option>Stiff-leg DL</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 4 </h5>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <h5> 8 </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> NA </h5>
+                    </div>
+
+                    <div class="pure-u-1-6">
+                        <h5> 8 </h5>
+                    </div>
+
+
+                </fieldset>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

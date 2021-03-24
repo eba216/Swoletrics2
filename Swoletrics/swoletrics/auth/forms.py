@@ -1,13 +1,13 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo, ValidationError
-from werkzeug.security import check_password_hash
 
 from ..models import User
 
+
 class LoginForm(FlaskForm):
     username = StringField('Your Username', validators=[DataRequired()],
-                           render_kw={"type": "text", "placeholder": "username"},)
+                           render_kw={"type": "text", "placeholder": "username"}, )
     password = PasswordField('Password', validators=[DataRequired()],
                              render_kw={"type": "password", "placeholder": "password"})
     remember_me = BooleanField('Keep me logged in', render_kw={"class": "pure-checkbox"})
@@ -28,7 +28,6 @@ class LoginForm(FlaskForm):
             return False
 
         if not user.check_password(self.password.data):
-            print("Fail Here")
             self.password.errors.append('Incorrect Username or Password')
             return False
 
@@ -38,17 +37,17 @@ class LoginForm(FlaskForm):
 
 class SignupForm(FlaskForm):
     username = StringField('Username',
-                    validators=[
-                        DataRequired(), Length(3, 80),
-                        Regexp('^[A-Za-z0-9_]{3,}$',
-                            message='Usernames consist of numbers, letters,'
-                                    'and underscores.')],
+                           validators=[
+                               DataRequired(), Length(3, 80),
+                               Regexp('^[A-Za-z0-9_]{3,}$',
+                                      message='Usernames consist of numbers, letters,'
+                                              'and underscores.')],
                            render_kw={"type": "text", "placeholder": "username"})
     password = PasswordField('Password',
-                    validators=[
-                        DataRequired(),
-                        EqualTo('password2', message='Passwords must match.')
-                    ], render_kw={"type": "password", "placeholder": "password"})
+                             validators=[
+                                 DataRequired(),
+                                 EqualTo('password2', message='Passwords must match.')
+                             ], render_kw={"type": "password", "placeholder": "password"})
     password2 = PasswordField('Confirm Password', validators=[DataRequired()],
                               render_kw={"type": "password", "placeholder": "password"})
     email = StringField('Email',
